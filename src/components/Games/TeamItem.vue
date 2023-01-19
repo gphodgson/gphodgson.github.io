@@ -1,10 +1,10 @@
 <template>
     <div class="team-img" v-on:click="$emit('attempt-selection', team.id)">
-        <span v-if="finished || inGame && !scoreSide" class="score">{{ team.goals }}</span>
+        <span v-if="(finished || inGame) && !scoreSide" class="score">{{ team.goals }}</span>
         <img v-bind:src="require(`../../../res/${team.staticData.img}`)"
              v-bind:class="{selected: this.selected, predicted: this.predicted}"
              />
-        <span v-if="finished || inGame && scoreSide" class="score">{{ team.goals }}</span>
+        <span v-if="(finished || inGame) && scoreSide" class="score">{{ team.goals }}</span>
     </div>
 </template>
 
